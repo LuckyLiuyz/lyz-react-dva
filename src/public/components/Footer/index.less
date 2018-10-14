@@ -1,0 +1,41 @@
+.comWrapper{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    z-index: 200;
+
+    .topArrow {
+        position: absolute;
+        bottom: 20px;
+        width: 20px;
+        height: 35px;
+        left: 50%;
+        z-index: 100;
+        pointer-events: none;
+        transform: translateX(-50%);
+        background: url(../../assets/arrow.svg) center bottom / contain no-repeat;
+        animation: arrowAnimate 1.5s ease-in-out 0s infinite normal none running;
+    }
+}
+
+@keyframes arrowAnimate{
+    0% {
+        bottom: 10px;
+        opacity: .8;
+    }
+    50% {
+        bottom: 20px;
+        opacity: 1;
+    }
+    
+    80% {
+        bottom: 22px;
+        opacity: .4;
+    }
+    100% {
+        bottom: 22px;
+        opacity: 0;
+    }
+}
