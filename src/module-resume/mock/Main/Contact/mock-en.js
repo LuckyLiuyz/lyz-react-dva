@@ -1,4 +1,4 @@
-const Data = {
+const LanguageData = {
 
 }
-export default Data;
+export default LanguageData;

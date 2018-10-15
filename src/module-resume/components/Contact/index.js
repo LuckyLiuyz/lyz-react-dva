@@ -1,12 +1,12 @@
 import styles from './index.less';
-import Data from '../../mock/Main/Contact/mock-zh';
+import LanguageData from '../../mock/Main/Contact/mock-zh';
 
 function Contact(props) {
   
   return (
     <section className={styles.contact}>
       <ul>
-        <li className={styles.title}>{Data.title}</li>
+        <li className={styles.title}>{LanguageData.title}</li>
         <li className={styles.infoAlias}>
           <div className={styles.alias}>
               <span className={styles.word}>灵感</span>

@@ -9,7 +9,7 @@ function NavDotItem(props) {
    */
   const getImgSrc = () =>{
       let img = item.img;
-      return require(`../../assets/${img}`);
+      return require(`../../../assets/${img}`);
   }
 
   return (

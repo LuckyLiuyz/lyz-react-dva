@@ -1,4 +1,4 @@
-const Data = {
+const LanguageData = {
   title: '项目经历',
   worksList: [
     {
@@ -17,4 +17,4 @@ const Data = {
   ]
 }
 
-export default Data;
+export default LanguageData;

@@ -4,6 +4,7 @@ export default {
   namespace: 'app',
 
   state: {
+    language: 'zh', // 默认中文显示
     pageIndex: 0, // [0,1,2,3,4]: [首页,关于我,技能栈,项目经历,联系我],
     pageList: [
       'Default', 'AboutMe', 'Skills', 'Experience', 'Works', 'Contact'
@@ -23,6 +24,9 @@ export default {
 
   reducers: {
     changeState(state, action) {
+      return { ...state, ...action.payload };
+    },
+    changeLanguageState(state, action) {
       return { ...state, ...action.payload };
     },
   },

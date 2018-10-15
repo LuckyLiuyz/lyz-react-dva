@@ -1,18 +1,18 @@
 import styles from './index.less';
-import WorkItems from '../WorksItem';
-import Data from '../../mock/Main/Works/mock-zh';
+import WorkItems from './WorksItem';
+import LanguageData from '../../mock/Main/Works/mock-zh';
 
 function Works(props) {
   
   return (
     <section className={styles.works}>
       <ul>
-        <li className={styles.title}>{Data.title}</li>
+        <li className={styles.title}>{LanguageData.title}</li>
         <li className={styles.worksList}>
           {
-            Data.worksList.map((item, index) =>{
+            LanguageData.worksList.map((item, index) =>{
               return (
-                <WorkItems key={index} data = {Data.worksList[index]} index={index}/>
+                <WorkItems key={index} data = {LanguageData.worksList[index]} index={index}/>
               )
             })
           }

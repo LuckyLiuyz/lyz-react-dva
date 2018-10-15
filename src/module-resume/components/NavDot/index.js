@@ -1,15 +1,16 @@
 import styles from './index.less';
-import NavDotItem from '../NavDotItem';
-import Data from '../../mock/Main/NavDot/mock-zh'
+import NavDotItem from './NavDotItem';
 
 function NavDot(props) {
   let { pageIndex, onClick } = props;
+  const language = localStorage.getItem("language");
+  const LanguageData = require(`../../mock/Main/NavDot/mock-${language}.json`);
 
   return (
     <section className={styles.navDot}>
       <ul className={styles.dotList}>
       {
-          Data.dotList.map((item, index) => {
+          LanguageData.dotList.map((item, index) => {
             return(
               <NavDotItem key={index} {...props} item={item} pageIndex={pageIndex} onClick={onClick}/>
             )

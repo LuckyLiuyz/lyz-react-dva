@@ -1,7 +1,9 @@
 import styles from './index.less';
 
 function Default(props) {
-  
+  const language = localStorage.getItem("language");
+  const LanguageData = require(`../../mock/Main/Default/mock-${language}.json`);
+
   return (
     <section className={styles.default}>
       <ul>
@@ -9,12 +11,12 @@ function Default(props) {
           <img src={require('../../assets/photo.png')} alt="img"></img>
         </li>
         <li>
-          <p className={styles.powerWords}>生活不止眼前的苟且，还有诗和远方。</p>
+          <p className={styles.powerWords}>{ LanguageData.powerWords }</p>
         </li>
         <li className={styles.desList}>
-          <p>姓名： 刘业镇</p>
-          <p>职业： 前端开发工程师</p>
-          <p>邮箱： Best_try@163.com</p>
+          <p>{ LanguageData.desList.name }</p>
+          <p>{ LanguageData.desList.profession }</p>
+          <p>{ LanguageData.desList.mailBox }</p>
         </li>
       </ul>
     </section>

@@ -104,9 +104,31 @@ function Main(props) {
     }
   }
 
+  /**
+   * @method 切换语言
+   */
+  const changeLanguageState = () =>{
+    let language = app.language;
+    if(language){
+      if(language === 'zh'){
+        language = 'en';
+      }else{
+        language = 'zh'
+      }
+    }else {
+      language = 'zh';
+    }
+    dispatch({
+      type: 'app/changeLanguageState',
+      payload:{
+        language
+      }
+    })
+  }
+
   return (
     <div className={styles.mainWrapper}>
-      <Header />
+      <Header changeLanguageState={changeLanguageState}/>
       <NavDot pageIndex={app.pageIndex} onClick={turnNext}/>
       <div className={styles.content}>
         { getContent() }
@@ -117,9 +139,11 @@ function Main(props) {
 }
 
 Main.propTypes = {
+
 };
 
 function mapStateToProps(state) {
+  console.log('mapStateToProps state', state);
   return {
     app: state.app,
   };
