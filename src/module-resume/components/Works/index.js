@@ -12,7 +12,7 @@ function Works(props) {
           {
             Data.worksList.map((item, index) =>{
               return (
-                <WorkItems data = {Data.worksList[index]}/>
+                <WorkItems key={index} data = {Data.worksList[index]} index={index}/>
               )
             })
           }

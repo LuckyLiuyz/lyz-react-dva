@@ -13,7 +13,7 @@ function NavDotItem(props) {
   }
 
   return (
-      <li key={index} className={styles.item}>
+      <li key={item.img} className={styles.item}>
         <div className={styles.imgBOx}>
           <img alt="img" src={ getImgSrc() }/>
         </div> 

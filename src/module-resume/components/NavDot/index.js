@@ -11,7 +11,7 @@ function NavDot(props) {
       {
           Data.dotList.map((item, index) => {
             return(
-              <NavDotItem {...props} item={item} index={index}/>
+              <NavDotItem key={index} {...props} item={item} index={index}/>
             )
           })
         }
