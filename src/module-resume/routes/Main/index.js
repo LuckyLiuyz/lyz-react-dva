@@ -52,7 +52,9 @@ function Main(props) {
    */
   const turnNext = (type, pageIndex) =>{
     let index = 0;
-    if(!pageIndex){
+    if(Number.isInteger(pageIndex)){
+      index = pageIndex; // 点击右侧dot跳转
+    }else{
       pageIndex = app.pageIndex;
       if(type === 'top'){
         if(pageIndex === 0){
@@ -66,7 +68,7 @@ function Main(props) {
         }else{
           index = pageIndex + 1;
         }
-      }else{
+      }else{// 点击底部箭头跳转
         if(pageIndex === 4){
           index = 0;
         }else{

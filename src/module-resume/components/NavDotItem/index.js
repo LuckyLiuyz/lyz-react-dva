@@ -1,7 +1,7 @@
 import styles from './index.less';
 
 function NavDotItem(props) {
-  let { pageIndex, onClick, item, index } = props;
+  let { pageIndex, onClick, item } = props;
   
   /**
    * @method 拼接图片路径
@@ -13,13 +13,20 @@ function NavDotItem(props) {
   }
 
   return (
-      <li key={item.img} className={styles.item}>
-        <div className={styles.imgBOx}>
-          <img alt="img" src={ getImgSrc() }/>
-        </div> 
+      <li key={item.pageIndex} className={styles.item} onClick={(e) => onClick('', item.pageIndex)}>
+        {
+          pageIndex === item.pageIndex ?
+            <div className={styles.imgBOxSelected}>
+              <img alt="img" src={ getImgSrc() }/>
+            </div> 
+          :
+            <div className={styles.imgBOx}>
+              <img alt="img" src={ getImgSrc() }/>
+            </div> 
+        }
         <span className={styles.itemTitle}>{ item.title }</span>
       </li>
   );
 }
-
-export default NavDotItem;
+ 
+export default NavDotItem; 

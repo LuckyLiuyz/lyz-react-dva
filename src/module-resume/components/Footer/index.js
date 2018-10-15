@@ -5,7 +5,7 @@ function Footer(props) {
   
   return (
     <section className={styles.comWrapper}>
-      <div className={styles.topArrowWrapper} onClick={onClick}>
+      <div className={styles.topArrowWrapper} onClick={() => onClick('', '')}>
         <span className={styles.topArrow}></span>
       </div>
     </section>
