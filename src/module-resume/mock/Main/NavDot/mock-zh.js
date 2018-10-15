@@ -2,19 +2,19 @@ const Data = {
   dotList: [
     {
       title: "首页",
-      description: ""
+      img: "d_home.svg"
     },{
       title: "关于我",
-      description: ""
+      img: "d_info.svg"
     },{
       title: "技术栈",
-      description: ""
+      img: "d_skills.svg"
     },{
       title: "项目经验",
-      description: ""
+      img: "d_works.svg"
     },{
       title: "联系我",
-      description: ""
+      img: "d_contact.svg"
     },
   ]
 }
