@@ -4,10 +4,10 @@ export default {
   namespace: 'app',
 
   state: {
-    language: 'zh', // 默认中文显示
+    language: 'zh_CN', // 默认中文显示
     pageIndex: 0, // [0,1,2,3,4]: [首页,关于我,技能栈,项目经历,联系我],
     pageList: [
-      'Default', 'AboutMe', 'Skills', 'Experience', 'Works', 'Contact'
+      'Default', 'AboutMe', 'Skills', 'Works', 'Contact'
     ]
   },
 

@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 function Header(props) {
   let { changeLanguageState } = props;
   const language = localStorage.getItem("language");
-  const LanguageData = require(`../../mock/Main/Header/mock-${language}.json`);
+  const LanguageData = require(`../../locales/Main/Header/${language}.json`);
 
   return (
     <section className={styles.headerWrapper}>

@@ -4,7 +4,7 @@ import NavDotItem from './NavDotItem';
 function NavDot(props) {
   let { pageIndex, onClick } = props;
   const language = localStorage.getItem("language");
-  const LanguageData = require(`../../mock/Main/NavDot/mock-${language}.json`);
+  const LanguageData = require(`../../locales/Main/NavDot/${language}.json`);
 
   return (
     <section className={styles.navDot}>

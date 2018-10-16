@@ -1,7 +1,7 @@
 import dva from 'dva';
 import './index.css';
 
-localStorage.setItem('language', 'zh'); // 默认语言为中文
+localStorage.setItem('language', 'zh_CN'); // 默认语言为中文
 
 // 1. Initialize
 const app = dva({

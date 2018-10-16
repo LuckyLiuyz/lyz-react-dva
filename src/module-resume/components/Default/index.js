@@ -2,7 +2,7 @@ import styles from './index.less';
 
 function Default(props) {
   const language = localStorage.getItem("language");
-  const LanguageData = require(`../../mock/Main/Default/mock-${language}.json`);
+  const LanguageData = require(`../../locales/Main/Default/${language}.json`);
 
   return (
     <section className={styles.default}>

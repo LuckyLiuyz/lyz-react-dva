@@ -1,25 +1,32 @@
 import styles from './index.less';
-import LanguageData from '../../mock/Main/Contact/mock-zh';
 
 function Contact(props) {
-  
+  const language = localStorage.getItem("language");
+  const LanguageData = require(`../../locales/Main/Contact/${language}.json`);
+
   return (
     <section className={styles.contact}>
       <ul>
         <li className={styles.title}>{LanguageData.title}</li>
         <li className={styles.infoAlias}>
           <div className={styles.alias}>
-              <span className={styles.word}>灵感</span>
-              <span className={styles.word}>代码</span>
-              <span className={styles.word}>梦想</span>
-              <span className={styles.word}>未来</span>
+            {
+              LanguageData.wordsList.map((item, index) =>{
+                return (
+                  <span key={index} className={styles.word}>{ item }</span>
+                )
+              })
+            }
           </div>
         </li>
         <li className={styles.infoDesc}>
-          <p>行路有良友，便是捷径</p>
-          <p>注重效率，偏爱敏捷开发</p>
-          <p>喜欢尝试，期待新鲜事物</p>
-          <p>既然选择了远方,便只顾风雨兼程</p>
+          {
+            LanguageData.sentenceList.map((item, index) =>{
+              return (
+                <p key={index}>{ item }</p>
+              )
+            })
+          }
         </li>
         <li className={styles.contactType}>
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/Happy-LYZ">

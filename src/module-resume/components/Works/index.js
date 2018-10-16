@@ -1,9 +1,10 @@
 import styles from './index.less';
 import WorkItems from './WorksItem';
-import LanguageData from '../../mock/Main/Works/mock-zh';
 
 function Works(props) {
-  
+  const language = localStorage.getItem("language");
+  const LanguageData = require(`../../locales/Main/Works/${language}.json`);
+
   return (
     <section className={styles.works}>
       <ul>
@@ -12,7 +13,7 @@ function Works(props) {
           {
             LanguageData.worksList.map((item, index) =>{
               return (
-                <WorkItems key={index} data = {LanguageData.worksList[index]} index={index}/>
+                <WorkItems key={index} data={LanguageData.worksList[index]} index={index}/>
               )
             })
           }
