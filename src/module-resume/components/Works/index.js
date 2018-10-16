@@ -2,8 +2,8 @@ import styles from './index.less';
 import WorkItems from './WorksItem';
 
 function Works(props) {
-  const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/Works/${language}.json`);
+  let { getLanguageData } = props;
+  const LanguageData = getLanguageData(`Works`);
 
   return (
     <section className={styles.works}>

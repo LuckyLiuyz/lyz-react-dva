@@ -1,8 +1,9 @@
 import styles from './index.less';
 
 function Default(props) {
-  const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/Default/${language}.json`);
+  let { getLanguageData } = props;
+  
+  const LanguageData = getLanguageData(`Default`);
 
   return (
     <section className={styles.default}>

@@ -11,12 +11,12 @@ import Skills from '../../components/Skills';
 import Works from '../../components/Works';
 
 function Main(props) {
-  let { dispatch, app } = props;
+  let { dispatch, app, getLanguageData } = props;
 
-  let timer = 0;
   /**
    * @method 统一处理滚轮滚动事件
    */
+  let timer = 0;
   const wheel = (event) => {
     clearTimeout(timer);
     timer = setTimeout(function(){
@@ -38,7 +38,7 @@ function Main(props) {
           turnNext('top');
         }
       }
-    }, 100);
+    }, 150);
   }
   //判断鼠标滚轮滚动方向
   if (window.addEventListener){ //FF,火狐浏览器会识别该方法
@@ -92,15 +92,15 @@ function Main(props) {
    */
   const getContent = () =>{
     if(app.pageIndex === 1){
-      return <AboutMe />
+      return <AboutMe getLanguageData={getLanguageData}/>
     }else if(app.pageIndex === 2){
-      return <Skills />
+      return <Skills getLanguageData={getLanguageData}/>
     }else if(app.pageIndex === 3){
-      return <Works />
+      return <Works getLanguageData={getLanguageData}/>
     }else if(app.pageIndex === 4){
-      return <Contact />
+      return <Contact getLanguageData={getLanguageData}/>
     }else{
-      return <Default />
+      return <Default getLanguageData={getLanguageData}/>
     }
   }
 
@@ -122,12 +122,12 @@ function Main(props) {
 
   return (
     <div className={styles.mainWrapper}>
-      <Header changeLanguageState={changeLanguageState}/>
-      <NavDot pageIndex={app.pageIndex} onClick={turnNext}/>
+      <Header getLanguageData={getLanguageData} changeLanguageState={changeLanguageState}/>
+      <NavDot getLanguageData={getLanguageData} pageIndex={app.pageIndex} onClick={turnNext}/>
       <div className={styles.content}>
         { getContent() }
       </div>
-      <Footer onClick={turnNext}/>
+      <Footer getLanguageData={getLanguageData} onClick={turnNext}/>
     </div>
   );
 }
@@ -140,6 +140,11 @@ function mapStateToProps(state) {
   console.log('mapStateToProps state', state);
   return {
     app: state.app,
+    getLanguageData: function(route){
+        const language = localStorage.getItem("language");
+        const LanguageData = require(`../../locales/Main/${route}/${language}.json`);
+        return LanguageData;
+    }
   };
 }
 export default connect(mapStateToProps)(Main);

@@ -4,9 +4,10 @@ import { Switch } from 'antd';
 import 'antd/dist/antd.css';
 
 function Header(props) {
-  let { changeLanguageState } = props;
+  let { changeLanguageState, getLanguageData } = props;
+  
   const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/Header/${language}.json`);
+  const LanguageData = getLanguageData(`Header`);
 
   return (
     <section className={styles.headerWrapper}>

@@ -2,9 +2,8 @@ import styles from './index.less';
 import NavDotItem from './NavDotItem';
 
 function NavDot(props) {
-  let { pageIndex, onClick } = props;
-  const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/NavDot/${language}.json`);
+  let { pageIndex, onClick, getLanguageData } = props;
+  const LanguageData = getLanguageData(`NavDot`);
 
   return (
     <section className={styles.navDot}>

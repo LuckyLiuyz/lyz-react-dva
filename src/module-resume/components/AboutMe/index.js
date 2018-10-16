@@ -1,8 +1,8 @@
 import styles from './index.less';
 
 function AboutMe(props) {
-  const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/AboutMe/${language}.json`);
+  let { getLanguageData } = props;
+  const LanguageData = getLanguageData(`AboutMe`);
 
   return (
     <section className={styles.aboutMe}>

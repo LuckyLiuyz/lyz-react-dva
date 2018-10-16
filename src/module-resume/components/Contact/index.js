@@ -1,8 +1,8 @@
 import styles from './index.less';
 
 function Contact(props) {
-  const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/Contact/${language}.json`);
+  let { getLanguageData } = props;
+  const LanguageData = getLanguageData(`Contact`);
 
   return (
     <section className={styles.contact}>

@@ -3,9 +3,8 @@ import { TagCloud } from 'ant-design-pro/lib/Charts';
 import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
 
 function Skills(props) {
-  const language = localStorage.getItem("language");
-  const LanguageData = require(`../../locales/Main/Skills/${language}.json`);
-
+  let { getLanguageData } = props;
+  const LanguageData = getLanguageData('Skills');
   const tags = [{
     name: `React`,
     value: Math.floor((Math.random() * 20)) + 400,
@@ -68,7 +67,6 @@ function Skills(props) {
           }
         </li>
       </ul>
-      
     </section>
   );
 }
