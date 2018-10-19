@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './index.less';
-import NavDot from '../../components/NavDot';
 import AboutMe from '../../components/AboutMe';
 import Contact from '../../components/Contact';
 import Default from '../../components/Default';
@@ -123,7 +122,6 @@ function Main(props) {
   return (
     <div className={styles.mainWrapper}>
       <Header getLanguageData={getLanguageData} changeLanguageState={changeLanguageState}/>
-      {/* <NavDot getLanguageData={getLanguageData} pageIndex={app.pageIndex} onClick={turnNext}/> */}
       <div className={styles.content}>
         { getContent() }
       </div>

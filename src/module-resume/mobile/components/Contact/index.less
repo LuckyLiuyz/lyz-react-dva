@@ -5,7 +5,9 @@
 
     ul{
         position: relative;
-        top: 80px;
+        height: 100%;
+        margin: 0;
+        padding-top: 80px;
         
         .title{
             text-align: center;
@@ -54,9 +56,11 @@
             }
         }
         .contactType{
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
             display: flex;
-            justify-content: center;
-            margin: 100px auto 0;
+            transform: translateX(-50%);
             
             a{
                 position: relative;

@@ -10,6 +10,7 @@
   "dependencies": {
     "ant-design-pro": "^2.0.0",
     "antd": "^3.10.1",
+    "antd-mobile": "^2.2.5",
     "dva": "^2.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
