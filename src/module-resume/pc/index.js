@@ -3,6 +3,7 @@ import './index.css';
 
 
 localStorage.setItem('language', 'zh_CN'); // 默认语言为中文
+
 // 1. Initialize
 const app = dva({
     initialState: {},
@@ -13,6 +14,7 @@ const app = dva({
         } 
     },
 });
+
 // app.use(); // 2. Plugins
 app.model(require('./models/app.js').default);  // 3. Register global model
 app.router(require('./router.js').default); // 4. Router

@@ -1,7 +1,6 @@
 {
   "private": true,
   "module": "resume",
-  "os": "pc", 
   "scripts": {
     "start": "roadhog server",
     "build": "roadhog build",
