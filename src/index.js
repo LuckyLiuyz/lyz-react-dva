@@ -1,6 +1,14 @@
+import { getOS } from './public/utils/Tools';
 const config = require('../package.json');
 
 /**
- * @description 根据不同的模块，引用不同的入口文件.比如module-resume是个人简历模块。
+ * @description 根据当前设备类型，加载对应的页面
  */
-require(`./module-${config.module}/index`);
+if (getOS().isAndroid || getOS().isPhone || getOS().isTablet || getOS().isWindowsPhone) {
+    require(`./module-${config.module}/mobile/index`);
+} else {
+    require(`./module-${config.module}/pc/index`);
+}
+
+
+ 
