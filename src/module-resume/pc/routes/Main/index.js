@@ -108,9 +108,11 @@ function Main(props) {
    * @method 切换语言
    */
   const changeLanguageState = () =>{
-    let language = app.language ? app.language : 'zh_CN';
+    let language = app.language;
     if(language === 'zh_CN'){
       language = 'en_US';
+    }else{
+      language = 'zh_CN';
     }
     dispatch({
       type: 'app/changeLanguageState',
