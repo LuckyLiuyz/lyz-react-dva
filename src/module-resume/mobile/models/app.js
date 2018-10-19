@@ -5,7 +5,7 @@ export default {
 
   state: {
     language: 'zh_CN', // 默认中文显示
-    pageIndex: 3, // [0,1,2,3,4]: [首页,关于我,技能栈,项目经历,联系我],
+    pageIndex: 0, // [0,1,2,3,4]: [首页,关于我,技能栈,项目经历,联系我],
     pageList: [
       'Default', 'AboutMe', 'Skills', 'Works', 'Contact'
     ]
