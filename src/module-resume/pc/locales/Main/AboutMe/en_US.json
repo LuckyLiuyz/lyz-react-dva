@@ -1,0 +1,24 @@
+{
+  "title": "About me",
+  "infoList":[
+    {
+      "img": "i_age.svg",
+      "desc": "age/26"
+    },{
+      "img": "i_edu.svg",
+      "desc": "edu/undergraduate"
+    },{
+      "img": "i_site.svg",
+      "desc": "site/BeiJing"
+    },{
+      "img": "i_status.svg",
+      "desc": "status/On job"
+    }
+  ],
+  "descList":[
+    "Strong self motivation, code obsessive-compulsive disorder",
+    "Three years of Internet experience, two and a half full-time front-end development experience.",
+    "Familiar with MV* development, well versed in automation and modular development.",
+    "Effective self-learning ability, independent analysis and problem solving skills"
+  ]
+}

@@ -1,4 +1,3 @@
-// import { Link } from 'dva/router';
 import styles from './index.less';
 import { Switch } from 'antd';
 import 'antd/dist/antd.css';
@@ -9,7 +8,7 @@ function Header(props) {
   const language = localStorage.getItem("language");
   const LanguageData = getLanguageData(`Header`);
 
-  return (
+  return ( 
     <section className={styles.headerWrapper}>
       <a href="https://github.com/Happy-LYZ">
         <img className={styles.img} src={require('../../assets/favicon.jpg')} alt="img"/>

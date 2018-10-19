@@ -1,0 +1,1 @@
+1、module-resume 未区分OS系统时（只有PC，还没拆出mobile时）与区分OS系统后，压缩文件大小变化在100K之内。

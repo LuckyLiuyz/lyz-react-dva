@@ -1,0 +1,43 @@
+
+
+.headerWrapper{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    z-index: 200;
+
+    .img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-left: 15px;
+    }
+    .languageSwitchCN{
+        position: relative;
+        right: 15px; 
+        background-color: rgba(0, 0, 0, .7);
+
+        &:after{
+            content: "英";
+            color:rgba(0,0,0,.3);
+            font-size: 12px;
+        }
+    }
+
+    .languageSwitchEN{
+        position: relative;
+        right: 15px;
+        background-color: rgba(0, 0, 0, .7);
+
+        &:after{
+            content: "CN";
+            color:rgba(0,0,0,.3);
+            font-size: 12px;
+        }
+    }
+}
