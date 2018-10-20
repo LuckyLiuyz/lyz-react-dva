@@ -1,23 +1,23 @@
 {
   "dotList": [
     {
-      "title": "home",
+      "title": "Home",
       "pageIndex": 0,
       "img": "d_home.svg"
     },{
-      "title": "aboutMe",
+      "title": "AboutMe",
       "pageIndex": 1,
       "img": "d_info.svg"
     },{
-      "title": "skills",
+      "title": "Skills",
       "pageIndex": 2,
       "img": "d_skills.svg"
     },{
-      "title": "works",
+      "title": "Works",
       "pageIndex": 3,
       "img": "d_works.svg"
     },{
-      "title": "contact",
+      "title": "Contact",
       "pageIndex": 4,
       "img": "d_contact.svg"
     }
