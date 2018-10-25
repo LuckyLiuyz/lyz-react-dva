@@ -8,12 +8,12 @@ function Header(props) {
   const language = localStorage.getItem("language");
   const LanguageData = getLanguageData(`Header`);
 
-  return ( 
+  return (  
     <section className={styles.headerWrapper}>
       <a href="https://github.com/Happy-LYZ">
         <img className={styles.img} src={require('../../assets/favicon.jpg')} alt="img"/>
       </a>
-      <Switch className={language === 'zh' ? styles.languageSwitchCN : styles.languageSwitchEN} checkedChildren={LanguageData.language.zh} unCheckedChildren={LanguageData.language.en} defaultChecked onChange={changeLanguageState}/>
+      <Switch className={language === 'zh_CN' ? styles.languageSwitchCN : styles.languageSwitchEN} checkedChildren={LanguageData.language.zh} unCheckedChildren={LanguageData.language.en} defaultChecked onChange={changeLanguageState}/>
     </section>
   );
 }
