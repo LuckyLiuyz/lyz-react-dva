@@ -7,33 +7,64 @@
   <link rel="stylesheet" href="index.css" />
   <link rel="icon" type="image/x-icon" class="js-site-favicon" href="./static/favicon.jpg"> <!-- 上传服务器后，图片都在static目录下 -->
   <script>
-    // var os = function () {
-    //   var ua = navigator.userAgent,
-    //     isWindowsPhone = /(?:Windows Phone)/.test(ua),
-    //     isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
-    //     isAndroid = /(?:Android)/.test(ua),
-    //     isFireFox = /(?:Firefox)/.test(ua),
-    //     isChrome = /(?:Chrome|CriOS)/.test(ua),
-    //     isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox &&
-    //       /(?:Tablet)/.test(ua)),
-    //     isPhone = /(?:iPhone)/.test(ua) && !isTablet,
-    //     isPc = !isPhone && !isAndroid && !isSymbian;
-    //   return {
-    //     isTablet: isTablet,
-    //     isPhone: isPhone,
-    //     isAndroid: isAndroid,
-    //     isPc: isPc
-    //   };
-    // }();
-    // if (os.isAndroid || os.isPhone || os.isTablet) {
-    //   location.replace('mobile.html');
-    // } else {
-    //   location.replace('index.html');
-    // }
+    function isWeixin () { //判断是否是微信
+        var ua = navigator.userAgent.toLowerCase();
+        return ua.match(/MicroMessenger/i) == "micromessenger";
+    };
+    function getRandromColor(){
+      var colorStr="";//颜色字符串
+      var randomArr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];//字符串的每一字符的范围
+      //产生一个六位的字符串
+      for(var i=0;i<6;i++){
+        colorStr+=randomArr[Math.ceil(Math.random()*(15-0)+0)]; //15是范围上限，0是范围下限，两个函数保证产生出来的随机数是整数
+      }
+      return "#"+colorStr;
+    } 
+    window.onload = function(){
+      if(false && isWeixin()){
+        document.getElementById("weixin").style.display = "flex"; 
+        // 动态设置提示文字颜色
+        setInterval(function(){
+          var colorStr = getRandromColor();
+          document.getElementById("tips").style.color = colorStr;
+        }, 1000);
+      }else{
+        var createDiv = document.createElement("div");  
+        createDiv.id = "root";  
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'index.js';
+        var body = document.getElementsByTagName('body')[0];
+        body.appendChild(createDiv);  
+        body.appendChild(script);  
+      }
+    }
   </script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html, body{
+      height: 100%;
+      width: 100%;
+    }
+    #weixin{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="index.js"></script>
+  <div id="weixin" style="display:none;">
+    <p id="tips">
+      因网站域名备案及认证号绑定问题，无法正常显示。
+      <br/>
+      请点击屏幕右上角的图标 --> 然后选择“在浏览器打开”。
+    </p>
+  </div>
 </body>
 </html>
