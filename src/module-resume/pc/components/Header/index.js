@@ -10,7 +10,7 @@ function Header(props) {
 
   return ( 
     <section className={styles.headerWrapper}>
-      <a href="https://github.com/Happy-LYZ">
+      <a href="https://github.com/Lucky-LYZ">
         <img className={styles.img} src={require('../../assets/favicon.jpg')} alt="img"/>
       </a>
       <Switch className={language === 'zh' ? styles.languageSwitchCN : styles.languageSwitchEN} checkedChildren={LanguageData.language.zh} unCheckedChildren={LanguageData.language.en} defaultChecked onChange={changeLanguageState}/>
